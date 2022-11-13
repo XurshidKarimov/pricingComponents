@@ -8,7 +8,8 @@
 *,
 *:before,
 *:after {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 :focus,
@@ -139,10 +140,14 @@ body {
 }
 
 a {
+  -webkit-transition: linear 0.2s;
+  -o-transition: linear 0.2s;
   transition: linear 0.2s;
 }
 
 .cards-block {
+  background: -webkit-gradient(linear, left bottom, left top, from(#F2F2F2), to(#F2F2F2));
+  background: -o-linear-gradient(bottom, #F2F2F2, #F2F2F2);
   background: linear-gradient(360deg, #F2F2F2, #F2F2F2);
   height: 100%;
 }
@@ -167,12 +172,19 @@ a {
 }
 .cards-block .container .cards-block__content__swap--block {
   position: relative;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -moz-column-gap: 24px;
-       column-gap: 24px;
+       -webkit-column-gap: 24px;
+          column-gap: 24px;
   left: 50%;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
   margin-bottom: 40px;
 }
 .cards-block .container .cards-block__content__swap--block span {
@@ -186,8 +198,11 @@ a {
   position: relative;
   width: 56px;
   height: 32px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   padding: 4px;
+  background: -o-linear-gradient(315deg, #A2A7F0 0%, #696EDD 100%);
   background: linear-gradient(135deg, #A2A7F0 0%, #696EDD 100%);
   border-radius: 16px;
   overflow: hidden;
@@ -207,19 +222,39 @@ a {
   height: 24px;
 }
 .cards-block .container .cards-block__content__cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 .cards-block .container .cards-block__content__cards__card {
   width: 350px;
   padding: 31px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   background-color: #FFFFFF;
+  -webkit-transition: linear 0.2s;
+  -o-transition: linear 0.2s;
   transition: linear 0.2s;
   border-radius: 10px;
   cursor: pointer;
@@ -233,12 +268,22 @@ a {
   margin-bottom: 24px;
 }
 .cards-block .container .cards-block__content__cards__card__price {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -moz-column-gap: 8px;
-       column-gap: 8px;
+       -webkit-column-gap: 8px;
+          column-gap: 8px;
   margin-bottom: 32px;
 }
 .cards-block .container .cards-block__content__cards__card__price__currency {
@@ -274,6 +319,7 @@ a {
 }
 .cards-block .container .cards-block__content__cards__card__link {
   padding: 14px 64px;
+  background: -o-linear-gradient(315deg, #A2A7F0 0%, #696EDD 100%);
   background: linear-gradient(135deg, #A2A7F0 0%, #696EDD 100%);
   font-size: 13px;
   font-weight: 700;
@@ -286,6 +332,7 @@ a {
 .cards-block .container .cards-block__content__cards__card:hover {
   padding-top: 54px;
   padding-bottom: 54px;
+  background: -o-linear-gradient(315deg, #A2A7F0 0%, #696EDD 100%);
   background: linear-gradient(135deg, #A2A7F0 0%, #696EDD 100%);
 }
 .cards-block .container .cards-block__content__cards__card:hover :where(.cards-block__content__cards__card__title,
@@ -316,4 +363,4 @@ a {
   height: 759px;
   z-index: -1;
   background: url(./assets/images/Group\ 10.png) no-repeat;
-}/*# sourceMappingURL=style.css.map */
+}
