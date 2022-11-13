@@ -1,0 +1,319 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a {
+  display: inline-block;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+img {
+  display: block;
+}
+
+.flow {
+  --flow-space: 1em;
+}
+
+.flow > * + * {
+  margin-top: 1em;
+  margin-top: var(--flow-space);
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 16px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+a {
+  transition: linear 0.2s;
+}
+
+.cards-block {
+  background: linear-gradient(360deg, #F2F2F2, #F2F2F2);
+  height: 100%;
+}
+.cards-block .container {
+  max-width: 1080px;
+  margin: auto;
+  padding: 0 15px;
+}
+.cards-block .container .cards-block__content {
+  padding-top: 10px;
+  position: relative;
+  z-index: 1;
+}
+.cards-block .container .cards-block__content__title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 39.01px;
+  text-transform: capitalize;
+  color: #6E728E;
+  margin-bottom: 40px;
+}
+.cards-block .container .cards-block__content__swap--block {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  -moz-column-gap: 24px;
+       column-gap: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 40px;
+}
+.cards-block .container .cards-block__content__swap--block span {
+  color: #6E728E;
+  opacity: 0.5;
+}
+.cards-block .container .cards-block__content__swap--block span.active {
+  opacity: 1;
+}
+.cards-block .container .cards-block__content__swap--block__swap {
+  position: relative;
+  width: 56px;
+  height: 32px;
+  display: flex;
+  padding: 4px;
+  background: linear-gradient(135deg, #A2A7F0 0%, #696EDD 100%);
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.cards-block .container .cards-block__content__swap--block__swap__swap1, .cards-block .container .cards-block__content__swap--block__swap__swap2 {
+  width: 50%;
+  height: 100%;
+  background-color: inherit;
+}
+.cards-block .container .cards-block__content__swap--block__swap__circle {
+  position: absolute;
+  right: 4px;
+  background-color: white;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+}
+.cards-block .container .cards-block__content__cards {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+.cards-block .container .cards-block__content__cards__card {
+  width: 350px;
+  padding: 31px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  background-color: #FFFFFF;
+  transition: linear 0.2s;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.cards-block .container .cards-block__content__cards__card__title {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 28px;
+  text-transform: capitalize;
+  color: #6E728E;
+  margin-bottom: 24px;
+}
+.cards-block .container .cards-block__content__cards__card__price {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  -moz-column-gap: 8px;
+       column-gap: 8px;
+  margin-bottom: 32px;
+}
+.cards-block .container .cards-block__content__cards__card__price__currency {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 49px;
+  text-transform: none;
+  color: #4A4D60;
+}
+.cards-block .container .cards-block__content__cards__card__price__number {
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 71px;
+  text-transform: none;
+  color: #4A4D60;
+}
+.cards-block .container .cards-block__content__cards__card__description-list {
+  margin-bottom: 32px;
+  width: 100%;
+}
+.cards-block .container .cards-block__content__cards__card__description-list li {
+  padding: 12px 0;
+  text-align: center;
+  border-bottom: 1px solid #DBDCE3;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 28px;
+  text-transform: none;
+  color: #6E728E;
+}
+.cards-block .container .cards-block__content__cards__card__description-list li:first-child {
+  border-top: 1px solid #DBDCE3;
+}
+.cards-block .container .cards-block__content__cards__card__link {
+  padding: 14px 64px;
+  background: linear-gradient(135deg, #A2A7F0 0%, #696EDD 100%);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 13.85px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  letter-spacing: 1.39px;
+  border-radius: 6px;
+}
+.cards-block .container .cards-block__content__cards__card:hover {
+  padding-top: 54px;
+  padding-bottom: 54px;
+  background: linear-gradient(135deg, #A2A7F0 0%, #696EDD 100%);
+}
+.cards-block .container .cards-block__content__cards__card:hover :where(.cards-block__content__cards__card__title,
+.cards-block__content__cards__card__price span,
+.cards-block__content__cards__card__description-list li) {
+  color: white;
+}
+.cards-block .container .cards-block__content__cards__card:hover .cards-block__content__cards__card__link {
+  background: #FFFFFF;
+  color: #696EDD;
+}
+.cards-block .container .cards-block__content::before {
+  content: "";
+  position: absolute;
+  bottom: -591px;
+  left: -170px;
+  width: 471px;
+  height: 759px;
+  z-index: -1;
+  background: url(./assets/images/Group\ 10\ Copy.png) no-repeat;
+}
+.cards-block .container .cards-block__content::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 810px;
+  width: 471px;
+  height: 759px;
+  z-index: -1;
+  background: url(./assets/images/Group\ 10.png) no-repeat;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+@import "nullstyle.scss";
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    min-height: 100vh;
+    overflow: hidden;
+
+}
+
+a {
+    transition: linear .2s;
+}
+
+$card__bg__color: #FFFFFF;
+$card__hover__color: linear-gradient(135deg, #A2A7F0 0%, #696EDD 100%);
+$card__price__color: #4A4D60;
+$main__font__color: #6E728E;
+$btn__bg: linear-gradient(135deg, #A2A7F0 0%, #696EDD 100%);
+
+.cards-block {
+    background: linear-gradient(360deg, #F2F2F2, #F2F2F2);
+    height: 100%;
+
+    & .container {
+        max-width: 1080px;
+        margin: auto;
+        padding: 0 15px;
+
+
+        & .cards-block__content {
+            padding-top: 10px;
+            position: relative;
+            z-index: 1;
+
+            &__title {
+                text-align: center;
+                @include font(32, 700, 39.01, capitalize, $main__font__color);
+                margin-bottom: 40px;
+            }
+
+            &__swap--block {
+                position: relative;
+                display: inline-flex;
+                align-items: center;
+                column-gap: 24px;
+                left: 50%;
+                transform: translateX(-50%);
+                margin-bottom: 40px;
+
+                & span {
+                    color: $main__font__color;
+                    opacity: .5;
+
+                    &.active {
+                        opacity: 1;
+                    }
+                }
+
+                &__swap {
+                    position: relative;
+                    width: 56px;
+                    height: 32px;
+                    display: flex;
+                    padding: 4px;
+                    background: linear-gradient(135deg, #A2A7F0 0%, #696EDD 100%);
+                    border-radius: 16px;
+                    overflow: hidden;
+                    cursor: pointer;
+
+                    &__swap1,
+                    &__swap2 {
+                        width: 50%;
+                        height: 100%;
+                        background-color: inherit;
+                    }
+
+                    &__circle {
+                        position: absolute;
+                        right: 4px;
+                        background-color: white;
+                        border-radius: 50%;
+                        width: 24px;
+                        height: 24px;
+                    }
+                }
+            }
+
+            &__cards {
+                @include flex(center);
+
+                &__card {
+                    width: 350px;
+                    padding: 31px;
+                    @include flex(center, $fDirection: column);
+                    background-color: $card__bg__color;
+                    transition: linear .2s;
+                    border-radius: 10px;
+                    cursor: pointer;
+
+                    &__title {
+                        @include font(18, 700, 28, capitalize, $main__font__color);
+                        margin-bottom: 24px;
+                    }
+
+                    &__price {
+                        @include flex(center, center, $cGap: 8);
+                        margin-bottom: 32px;
+
+                        &__currency {
+                            @include font(40, 700, 49, none, $card__price__color);
+                        }
+
+                        &__number {
+                            @include font(72, 700, 71, none, $card__price__color);
+                        }
+                    }
+
+                    &__description-list {
+                        margin-bottom: 32px;
+                        width: 100%;
+
+                        & li {
+                            padding: 12px 0;
+                            text-align: center;
+                            border-bottom: 1px solid #DBDCE3;
+                            @include font(15, 700, 28, none, $main__font__color);
+
+                            &:first-child {
+                                border-top: 1px solid #DBDCE3;
+                            }
+                        }
+                    }
+
+                    &__link {
+                        padding: 14px 64px;
+                        background: $btn__bg;
+                        @include font(13, 700, 13.85, uppercase, #FFFFFF);
+                        letter-spacing: 1.39px;
+                        border-radius: 6px;
+                    }
+
+                    &:hover {
+                        padding-top: 54px;
+                        padding-bottom: 54px;
+                        background: $card__hover__color;
+
+                        & :where(.cards-block__content__cards__card__title,
+                            .cards-block__content__cards__card__price span,
+                            .cards-block__content__cards__card__description-list li) {
+                            color: white;
+                        }
+
+                        & .cards-block__content__cards__card__link {
+                            background: #FFFFFF;
+                            color: #696EDD;
+                        }
+                    }
+                }
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                bottom: -591px;
+                left: -170px;
+                width: 471px;
+                height: 759px;
+                z-index: -1;
+                background: url(./assets/images/Group\ 10\ Copy.png) no-repeat;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 810px;
+                width: 471px;
+                height: 759px;
+                z-index: -1;
+                background: url(./assets/images/Group\ 10.png) no-repeat;
+            }
+        }
+    }
+}

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="blah blah blah">
+    <meta name="keywords" content="card, blah, blah">
+    <link rel="stylesheet" href="style.css">
+    <title>Cards</title>
+</head>
+<body>
+<div class="cards-block">
+    <div class="container">
+        <div class="cards-block__content">
+            <h2 class="cards-block__content__title">
+                our pricing
+            </h2>
+           
+            <div class="cards-block__content__swap--block">
+                <span id="anually">Annually</span>
+                <div class="cards-block__content__swap--block__swap">
+                    <div id="swap1" class="cards-block__content__swap--block__swap__swap1" onclick="swap1()"></div>
+                    <div id="swap2" class="cards-block__content__swap--block__swap__swap2" onclick="swap2()"></div>
+                    <div id="circle" class="cards-block__content__swap--block__swap__circle"></div>
+                </div>
+                <span id="monthly" class="active">Monthly</span>
+            </div>
+
+            <div class="cards-block__content__cards">
+                <div class="cards-block__content__cards__card">
+                    <h3 class="cards-block__content__cards__card__title">
+                        Basic
+                    </h3>
+                    <div class="cards-block__content__cards__card__price">
+                        <span class="cards-block__content__cards__card__price__currency">$</span>
+                        <span class="cards-block__content__cards__card__price__number">19.99</span>
+                    </div>
+                    <ul class="cards-block__content__cards__card__description-list">
+                        <li>500 GB Storage</li>
+                        <li>2 Users Allowed</li>
+                        <li>Send up to 3 GB</li>
+                    </ul>
+                    <a href="#" class="cards-block__content__cards__card__link">
+                        learn more
+                    </a>
+                </div>
+
+                <div class="cards-block__content__cards__card">
+                    <h3 class="cards-block__content__cards__card__title">
+                        Professional
+                    </h3>
+                    <div class="cards-block__content__cards__card__price">
+                        <span class="cards-block__content__cards__card__price__currency">$</span>
+                        <span class="cards-block__content__cards__card__price__number">24.99</span>
+                    </div>
+                    <ul class="cards-block__content__cards__card__description-list">
+                        <li>1 TB Storage</li>
+                        <li>5 Users Allowed</li>
+                        <li>Send up to 10 GB</li>
+                    </ul>
+                    <a href="#" class="cards-block__content__cards__card__link">
+                        learn more
+                    </a>
+                </div>
+
+                <div class="cards-block__content__cards__card">
+                    <h3 class="cards-block__content__cards__card__title">
+                        Master
+                    </h3>
+                    <div class="cards-block__content__cards__card__price">
+                        <span class="cards-block__content__cards__card__price__currency">$</span>
+                        <span class="cards-block__content__cards__card__price__number">39.99</span>
+                    </div>
+                    <ul class="cards-block__content__cards__card__description-list">
+                        <li>2 TB Storage</li>
+                        <li>10 Users Allowed</li>
+                        <li>Send up to 20 GB</li>
+                    </ul>
+                    <a href="#" class="cards-block__content__cards__card__link">
+                        learn more
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function swap1(){
+        let getSpan1 = document.getElementById('monthly'),
+            getSpan2 = document.getElementById('anually'),
+            getCircle = document.getElementById('circle').style,
+            getPrice = document.getElementsByClassName('cards-block__content__cards__card__price__number');
+
+            getSpan1.classList.remove('active');
+            getSpan2.classList.add('active');
+            getCircle.removeProperty('right');
+            getCircle.left = '4px';
+
+            for (el of getPrice){
+                el.innerHTML = String(Math.trunc(+el.innerHTML * 10) + 0.99); 
+            }
+            
+    }
+    function swap2(){
+        let getSpan1 = document.getElementById('monthly'),
+            getSpan2 = document.getElementById('anually'),
+            getCircle = document.getElementById('circle').style;
+            getPrice = document.getElementsByClassName('cards-block__content__cards__card__price__number');
+
+            getSpan2.classList.remove('active');
+            getSpan1.classList.add('active');
+            getCircle.removeProperty('left');
+            getCircle.right = '4px';
+
+            for (el of getPrice){
+                el.innerHTML = String(((+el.innerHTML / 10).toFixed(2) - 0.01)); 
+            }
+    }
+
+</script>
+
+</body>
+</html>
